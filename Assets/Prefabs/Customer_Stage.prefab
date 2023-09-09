@@ -48,6 +48,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Head: {fileID: 3523378888973895753}
   Torso: {fileID: 3766712907008843264}
+  CurrentFace: {fileID: 11400000, guid: d9265e61999fc3c4ba2df405afdb2b28, type: 2}
 --- !u!95 &8867325996685221412
 Animator:
   serializedVersion: 5
@@ -269,7 +270,7 @@ Transform:
   m_Children:
   - {fileID: 5006293660124356962}
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &7434433341991136732
 MonoBehaviour:

@@ -8,6 +8,14 @@ public class CustomerLoop : MonoBehaviour
     public Animator CustomerAnimator;
     public CustomerCharacter Customer;
     
+    public enum Phase
+    {
+        Idle,
+        Arrived,
+        Done,
+    }
+
+
     void Start()
     {
         StartCoroutine(TestSequence());
