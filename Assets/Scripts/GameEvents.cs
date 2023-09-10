@@ -52,6 +52,12 @@ public class GameEvents : MonoBehaviour
     public static event System.Action GameOver;
     public static void TriggerGameOver() => GameOver?.Invoke();
 
+    public static event System.Action<CustomerLoop.Phase> PhaseChanged;
+    public static void TriggerPhaseChange(CustomerLoop.Phase phase) => PhaseChanged?.Invoke(phase);
+
+    public static event System.Action<List<IngredientType>> WantsDetermined;
+    public static void TriggerWantsDetermined(List<IngredientType> ingredients) => WantsDetermined?.Invoke(ingredients);
+
     private void OnDestroy()
     {
         SandwichIngredientChanged = null;
@@ -61,6 +67,8 @@ public class GameEvents : MonoBehaviour
         TimeUpdated = null;
         TimesUp = null;
         GameOver = null;
+        PhaseChanged = null;
+        WantsDetermined = null;
     }
 
 }

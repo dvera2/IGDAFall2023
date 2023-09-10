@@ -1129,6 +1129,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 5006293660124356962, guid: 3989773b27c26894eb3c14b44fe1d701, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -1.99
+      objectReference: {fileID: 0}
     - target: {fileID: 7652612408151220475, guid: 3989773b27c26894eb3c14b44fe1d701, type: 3}
       propertyPath: m_Name
       value: Customer Stage

@@ -3,21 +3,32 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class UiGame : MonoBehaviour
 {
     public TMP_Text TipsLabel;
     public TMP_Text TipsDeltaLabel;
     public TMP_Text CustomersServedLabel;
+    public GameObject WantsImage;
 
     private void Start()
     {
         GameEvents.CustomersServed += OnCustomersServed;
         GameEvents.TimesUp += OnTimesUP;
-
+        GameEvents.PhaseChanged += OnPhaseChanged;
+        
         if (TipsDeltaLabel)
         {
             TipsDeltaLabel.gameObject.SetActive(false);
+        }
+    }
+
+    private void OnPhaseChanged(CustomerLoop.Phase obj)
+    {
+        if (WantsImage)
+        {
+            WantsImage.SetActive(obj == CustomerLoop.Phase.WaitingForOrder);
         }
     }
 

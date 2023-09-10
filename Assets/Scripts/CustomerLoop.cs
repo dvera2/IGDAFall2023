@@ -43,7 +43,7 @@ public class CustomerLoop : MonoBehaviour
 
     void Start()
     {
-        CurrentPhase = Phase.BetweenCustomers;
+        SetPhase(Phase.BetweenCustomers);
         StartNewCustomer();
     }
 
@@ -60,8 +60,9 @@ public class CustomerLoop : MonoBehaviour
 
         Customer.RandomizeWants();
         Customer.SetCustomerHead(Faces[Random.Range(0, Faces.Length)]);
+        Customer.SetCustomerTorso(Customer.Bodies[Random.Range(0, Customer.Bodies.Length)]);
 
-        CurrentPhase = Phase.BetweenCustomers;
+        SetPhase(Phase.BetweenCustomers);
         CustomerAnimator.SetTrigger("Reset");
     }
 
@@ -78,7 +79,7 @@ public class CustomerLoop : MonoBehaviour
                     if (_tempTimer >= 1.0f)
                     {
                         _tempTimer = 0;
-                        CurrentPhase = Phase.Arriving;
+                        SetPhase(Phase.Arriving);
                         CustomerAnimator.SetTrigger("Arrive");
                     }
                 }
@@ -90,7 +91,7 @@ public class CustomerLoop : MonoBehaviour
                     if (_tempTimer >= 1.0f)
                     {
                         _tempTimer = 0;
-                        CurrentPhase = Phase.WaitingForOrder;
+                        SetPhase(Phase.WaitingForOrder);
                     }
                 }
                 break;
@@ -141,6 +142,19 @@ public class CustomerLoop : MonoBehaviour
     private void GameEvents_SandwichSubmitted(SandwichSubmitArgs args)
     {
         int tipsDelta = Customer.GetSandwichScore(args);
+        CustomerExpression expression = CustomerExpression.Neutral;
+        if (tipsDelta > 0)
+        {
+            expression = CustomerExpression.Happy;
+        }
+        else if (tipsDelta < 0)
+        {
+            expression = CustomerExpression.Mad;
+        }
+
+        GameEvents.TriggerSatisfactionChanged(expression);
+
+
         if (tipsDelta < 0)
         {
             FailureAttempts--;
@@ -163,9 +177,10 @@ public class CustomerLoop : MonoBehaviour
             TipsTotal = TipsAmount,
         });
 
+
         // Go to tasting...
         _tempTimer = 0;
-        CurrentPhase = Phase.Tasting;
+        SetPhase(Phase.Tasting);
         CustomerAnimator.SetBool("IsBad", tipsDelta > 0);
         CustomerAnimator.SetTrigger("Taste");
     }
@@ -192,6 +207,12 @@ public class CustomerLoop : MonoBehaviour
     {
         _tempTimer = 0;
         CustomerAnimator.SetTrigger("Leave");
-        CurrentPhase = Phase.Leaving;
+        SetPhase(Phase.Leaving);
+    }
+
+    public void SetPhase(Phase newPhase)
+    {
+        CurrentPhase = newPhase;
+        GameEvents.TriggerPhaseChange(CurrentPhase);
     }
 }

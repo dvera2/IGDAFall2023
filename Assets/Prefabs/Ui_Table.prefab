@@ -635,6 +635,7 @@ MonoBehaviour:
   TipsLabel: {fileID: 0}
   TipsDeltaLabel: {fileID: 2879615645047268358}
   CustomersServedLabel: {fileID: 0}
+  WantsImage: {fileID: 0}
 --- !u!1 &4679950788428203828
 GameObject:
   m_ObjectHideFlags: 0
@@ -1019,6 +1020,7 @@ GameObject:
   - component: {fileID: 4454640851884450017}
   - component: {fileID: 4979854847974632971}
   - component: {fileID: 3624213540427522274}
+  - component: {fileID: 1442425207914869235}
   m_Layer: 5
   m_Name: Bread
   m_TagString: Untagged
@@ -1154,6 +1156,27 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ingredient: {fileID: 3328338785941901134, guid: 2b76652dfb23a534f9dbed81492f95bd, type: 3}
   sandwichCreator: {fileID: 0}
+--- !u!95 &1442425207914869235
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5242435186672928300}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 549a0d99ef76363459c08a4a7209599d, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &5470730917605366400
 GameObject:
   m_ObjectHideFlags: 0
@@ -1215,15 +1238,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.74509805, g: 0.39607844, b: 0.6862745, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
+  m_Sprite: {fileID: 21300000, guid: 8a30e7c0d47c47b4b92287a12ce3f30a, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -1439,15 +1462,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.5849056, g: 0.48054492, b: 0, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
+  m_Sprite: {fileID: 21300000, guid: 3cf416adbd2995a42b5647324ea46444, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -1777,7 +1800,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 772446971cc36ea44ac5b25f3f83825d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ingredient: {fileID: 3328338785941901134, guid: 9a434429fb8a7014cabbee7e4599d339, type: 3}
+  ingredient: {fileID: 3328338785941901134, guid: b3f8886538e24bf47be36461f916a334, type: 3}
   sandwichCreator: {fileID: 732684848928941677, guid: a1c797e11607c9b4da4b58b6a75473d0, type: 3}
 --- !u!95 &3633293379482749111
 Animator:
@@ -2166,15 +2189,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.29803923, g: 0.8039216, b: 0.28627452, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
+  m_Sprite: {fileID: 21300000, guid: 5d0186fcd8ab5a34ab2df88310dda1df, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
