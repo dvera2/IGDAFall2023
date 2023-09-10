@@ -5,9 +5,10 @@ using UnityEngine.SceneManagement;
 
 public class StartGame : MonoBehaviour
 {
+    public int sceneIndexToLoad;
  
     public void StartTheGame()
     {
-        SceneManager.LoadScene(1);
+        SceneManager.LoadScene(sceneIndexToLoad);
     }
 }
