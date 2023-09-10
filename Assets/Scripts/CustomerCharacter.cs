@@ -45,4 +45,14 @@ public class CustomerCharacter : MonoBehaviour
     {
         SetFaceExpression(CustomerExpression.Neutral);
     }
+
+    public int GetSandwichScore(SandwichSubmitArgs args)
+    {
+        return Random.Range(-5, 5);
+    }
+
+    public int GetMatchScore(SandwichUpdateArgs args)
+    {
+        return Random.Range(-5, 5);
+    }
 }
