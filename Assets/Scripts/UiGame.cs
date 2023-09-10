@@ -45,7 +45,8 @@ public class UiGame : MonoBehaviour
         if (TipsDeltaLabel)
         {
             TipsDeltaLabel.gameObject.SetActive(true);
-            TipsDeltaLabel.text = $"+{tipsDelta}";
+            var sign = tipsDelta > 0 ? "+" : string.Empty;
+            TipsDeltaLabel.text = $"{sign}{tipsDelta}";
         }
 
         yield return new WaitForSeconds(1.0f);
