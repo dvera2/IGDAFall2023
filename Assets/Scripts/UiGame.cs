@@ -7,6 +7,7 @@ using UnityEngine.UI;
 
 public class UiGame : MonoBehaviour
 {
+    public Animator TipsAnimator;
     public TMP_Text TipsLabel;
     public TMP_Text TipsDeltaLabel;
     public TMP_Text CustomersServedLabel;
@@ -58,6 +59,11 @@ public class UiGame : MonoBehaviour
             TipsDeltaLabel.gameObject.SetActive(true);
             var sign = tipsDelta > 0 ? "+" : string.Empty;
             TipsDeltaLabel.text = $"{sign}{tipsDelta}";
+        }
+
+        if(TipsAnimator && tipsDelta > 0)
+        {
+            TipsAnimator.SetTrigger("Ding");
         }
 
         yield return new WaitForSeconds(1.0f);

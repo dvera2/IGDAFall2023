@@ -15,7 +15,11 @@ public class CharacterFaceData : ScriptableObject
         switch(cs)
         {
             case CustomerExpression.Happy: return Happy;
+
+            case CustomerExpression.OnFire:
+            case CustomerExpression.Sick: 
             case CustomerExpression.Mad: return Mad;
+
             case CustomerExpression.Neutral: return Neutral;
             default:
                 return Neutral;
