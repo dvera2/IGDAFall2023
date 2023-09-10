@@ -34,7 +34,7 @@ public class UiWants : MonoBehaviour
 
         for(int i = 0; i < Mathf.Min(3, ingredients.Count); i++)
         {
-            images[i].sprite = ingredients[i].GetComponent<SpriteRenderer>().sprite;
+            //images[i].sprite = ingredients[i].GetComponent<SpriteRenderer>().sprite;
         }
     }
 }
