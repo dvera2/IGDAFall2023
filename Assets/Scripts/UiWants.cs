@@ -10,6 +10,14 @@ public class UiWants : MonoBehaviour
     public Image B; 
     public Image C;
 
+    [System.Serializable]
+    public class Entry
+    {
+        public IngredientType Type;
+        public Sprite Sprite;
+    }
+
+    public Entry[] Entries;
 
     private void Start()
     {
@@ -34,7 +42,18 @@ public class UiWants : MonoBehaviour
 
         for(int i = 0; i < Mathf.Min(3, ingredients.Count); i++)
         {
-            //images[i].sprite = ingredients[i].GetComponent<SpriteRenderer>().sprite;
+            images[i].sprite = GetSprite(ingredients[i]);
+            images[i].enabled = true;
         }
+    }
+
+    private Sprite GetSprite(IngredientType type)
+    {
+        foreach(var item in Entries)
+        {
+            if (item.Type == type)
+                return item.Sprite;
+        }
+        return null;
     }
 }

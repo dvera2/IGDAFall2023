@@ -581,10 +581,6 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1649507247998165236, guid: 96b898717f88fd74bb0ccfcf99362409, type: 3}
-      propertyPath: m_SizeDelta.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1649507247998165236, guid: 96b898717f88fd74bb0ccfcf99362409, type: 3}
       propertyPath: m_SizeDelta.y
       value: 0
       objectReference: {fileID: 0}
@@ -825,10 +821,6 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4880638023657019028, guid: 96b898717f88fd74bb0ccfcf99362409, type: 3}
-      propertyPath: m_SizeDelta.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4880638023657019028, guid: 96b898717f88fd74bb0ccfcf99362409, type: 3}
       propertyPath: m_SizeDelta.y
       value: 0
       objectReference: {fileID: 0}
@@ -926,10 +918,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8244913600895074780, guid: 96b898717f88fd74bb0ccfcf99362409, type: 3}
       propertyPath: m_AnchorMin.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8244913600895074780, guid: 96b898717f88fd74bb0ccfcf99362409, type: 3}
-      propertyPath: m_SizeDelta.x
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8244913600895074780, guid: 96b898717f88fd74bb0ccfcf99362409, type: 3}
@@ -1194,6 +1182,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2674638344915506606, guid: ef8a7611dcd5eda4ebc5c69726e6057e, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -36
+      objectReference: {fileID: 0}
     - target: {fileID: 3882310820691496746, guid: ef8a7611dcd5eda4ebc5c69726e6057e, type: 3}
       propertyPath: m_Name
       value: UI Clock

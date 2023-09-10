@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
 using System.Text;
 using UnityEngine;
@@ -116,6 +117,9 @@ public class CustomerCharacter : MonoBehaviour
             builder.AppendLine($"{item.Key} = {item.Value}");
 
         Debug.Log(builder.ToString());
+
+        var items = _customerIngredientRanking.OrderBy(x=>x.Value).Select(x=>x.Key).ToList();
+        GameEvents.TriggerWantsDetermined(items);
     }
 
     public void PlayMunchAudio()
