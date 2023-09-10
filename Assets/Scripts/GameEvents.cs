@@ -19,6 +19,14 @@ public struct TimeArgs
     public float Duration;
 }
 
+public struct CustomerServedArgs
+{
+    public int TipsTotal;
+    public int TipsDelta;
+    public int CustomersServedSoFar;
+}
+
+
 public class GameEvents : MonoBehaviour
 {
     public static event System.Action<CustomerExpression> SatisfactionChanged;
@@ -32,8 +40,9 @@ public class GameEvents : MonoBehaviour
     public static event OnSandwichSubmit SandwichSubmitted;
     public static void TriggerSandwichSubmitted(SandwichSubmitArgs args) => SandwichSubmitted?.Invoke(args);
 
-    public static event System.Action<int> TipsAmount;
-    public static void TriggerTipsUpdated(int tipsAmount) => TipsAmount?.Invoke(tipsAmount);
+    public static event System.Action<CustomerServedArgs> CustomersServed;
+    public static void TriggerTipsUpdated(CustomerServedArgs args) => CustomersServed?.Invoke(args);
+
 
     public static event System.Action<TimeArgs> TimeUpdated;
     public static void TriggerTimeUpdated(TimeArgs args) => TimeUpdated?.Invoke(args);
@@ -46,7 +55,7 @@ public class GameEvents : MonoBehaviour
         SandwichIngredientChanged = null;
         SandwichSubmitted = null;
         SatisfactionChanged = null;
-        TipsAmount = null;
+        CustomersServed = null;
         TimeUpdated = null;
         TimesUp = null;
     }

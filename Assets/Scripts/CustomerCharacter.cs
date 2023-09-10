@@ -43,6 +43,7 @@ public class CustomerCharacter : MonoBehaviour
 
     public void SetCustomerHead(CharacterFaceData data)
     {
+        CurrentFace = data;
         SetFaceExpression(CustomerExpression.Neutral);
     }
 

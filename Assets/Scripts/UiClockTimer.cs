@@ -21,7 +21,7 @@ public class UiClockTimer : MonoBehaviour
     {
         if(Clock != null)
         {
-            Clock.fillAmount = time.Time / time.Duration;
+            Clock.fillAmount = 1.0f - (time.Time / time.Duration);
         }
     }
 }

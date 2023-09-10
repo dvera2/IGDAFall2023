@@ -1,4 +1,3 @@
-using System;
 using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
@@ -6,6 +5,7 @@ using UnityEngine;
 
 public class CustomerLoop : MonoBehaviour
 {
+    public CharacterFaceData[] Faces;
     public Animator CustomerAnimator;
     public CustomerCharacter Customer;
 
@@ -50,12 +50,14 @@ public class CustomerLoop : MonoBehaviour
     {
         if (NumberOfCustomersServed >= 5)
         {
-            CurrentTime = 0;
             CurrentDuration = Mathf.Max(MinDuration, CurrentDuration * DurationReduction);
         }
 
         _isEnabled = true;
         _tempTimer = 0;
+        CurrentTime = 0;
+
+        Customer.SetCustomerHead(Faces[Random.Range(0, Faces.Length)]);
 
         CurrentPhase = Phase.BetweenCustomers;
         CustomerAnimator.SetTrigger("Reset");
@@ -114,7 +116,6 @@ public class CustomerLoop : MonoBehaviour
 
                     if (CurrentTime >= CurrentDuration)
                     {
-                        _isEnabled = false;
                         GameEvents.TriggerTimeUp(this);
                     }
                 }
@@ -149,8 +150,14 @@ public class CustomerLoop : MonoBehaviour
 
     private void GameEvents_SandwichSubmitted(SandwichSubmitArgs args)
     {
-        TipsAmount += Customer.GetSandwichScore(args);
-        GameEvents.TriggerTipsUpdated(TipsAmount);
+        int tipsDelta = Customer.GetSandwichScore(args);
+        TipsAmount += tipsDelta;
+        NumberOfCustomersServed++;
+        GameEvents.TriggerTipsUpdated( new CustomerServedArgs()
+        {
+            TipsDelta = tipsDelta,
+            TipsTotal = TipsAmount,
+        });
 
         // Go to tasting...
         _tempTimer = 0;

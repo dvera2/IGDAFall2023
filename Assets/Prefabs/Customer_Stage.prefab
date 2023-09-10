@@ -96,7 +96,7 @@ Transform:
   m_GameObject: {fileID: 6182111675027552576}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0.06, y: 3.73, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.3094, y: 1.3094, z: 1.3094}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1068316098821936239}
@@ -249,6 +249,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8359405437018281671}
   - component: {fileID: 7434433341991136732}
+  - component: {fileID: 1380925018683800521}
   m_Layer: 0
   m_Name: Customer_Stage
   m_TagString: Untagged
@@ -284,5 +285,31 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 291160062739fad4f8390c9c26384762, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Faces:
+  - {fileID: 11400000, guid: 92d467f924b873e4d860360509af3e54, type: 2}
+  - {fileID: 11400000, guid: 9a46c7813ad422946b23d1a41764eec2, type: 2}
+  - {fileID: 11400000, guid: 1f89bd13d1f954a4ebf4880986c40cbb, type: 2}
+  - {fileID: 11400000, guid: 1d66499a3d611e8489e627f9ba96572e, type: 2}
   CustomerAnimator: {fileID: 8867325996685221412}
   Customer: {fileID: 8145492536123171285}
+  StartingDuration: 30
+  NumBeforeReduction: 5
+  MinDuration: 5
+  DurationReduction: 0.95
+  CurrentTime: 0
+  CurrentDuration: 30
+  NumberOfCustomersServed: 0
+  TipsAmount: 0
+  CurrentPhase: 0
+--- !u!114 &1380925018683800521
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7652612408151220475}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 39b4191390369fa4ca8c2a85ba108a8d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
