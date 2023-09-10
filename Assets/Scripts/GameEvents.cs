@@ -5,12 +5,12 @@ using UnityEngine;
 
 public class SandwichUpdateArgs
 {
-
+    public Ingredient Ingredient;
 }
 
 public class SandwichSubmitArgs
 {
-
+    public List<Ingredient> Sandwich;
 }
 
 public struct TimeArgs

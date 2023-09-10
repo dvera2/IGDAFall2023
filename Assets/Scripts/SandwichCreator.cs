@@ -30,6 +30,16 @@ public class SandwichCreator: MonoBehaviour
         }
     }
 
+    public void SubmitSandwich()
+    {
+        GameEvents.TriggerSandwichSubmitted(new SandwichSubmitArgs()
+        {
+            Sandwich = currentSandwhich
+        }); 
+
+        ClearSandwich();
+    }
+
     public void ClearSandwich()
     {
         foreach (var item in currentSandwhich)
@@ -52,7 +62,11 @@ public class SandwichCreator: MonoBehaviour
             {
                 ingredientsStackIndex++;
             }
-            
+
+            GameEvents.TriggerSandwichIngredientChanged(new SandwichUpdateArgs()
+            {
+                Ingredient = spawnedIngredient,
+            });
         }
 
     }
