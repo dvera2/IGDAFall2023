@@ -16,6 +16,7 @@ public class CustomerLoop : MonoBehaviour
 
     public float CurrentTime;
     public float CurrentDuration;
+    public int FailureAttempts = 3;
 
     public int NumberOfCustomersServed = 0;
     public int TipsAmount = 0;
@@ -57,6 +58,7 @@ public class CustomerLoop : MonoBehaviour
         _tempTimer = 0;
         CurrentTime = 0;
 
+        Customer.RandomizeWants();
         Customer.SetCustomerHead(Faces[Random.Range(0, Faces.Length)]);
 
         CurrentPhase = Phase.BetweenCustomers;
@@ -67,18 +69,6 @@ public class CustomerLoop : MonoBehaviour
     {
         if (!_isEnabled)
             return;
-
-        if (Input.GetKeyDown(KeyCode.V))
-        {
-            GameEvents.TriggerSandwichIngredientChanged(new SandwichUpdateArgs());
-            return;
-        }
-
-        if (Input.GetKeyDown(KeyCode.S))
-        {
-            GameEvents.TriggerSandwichSubmitted(new SandwichSubmitArgs());
-            return;
-        }
 
         switch (CurrentPhase)
         {
@@ -151,7 +141,21 @@ public class CustomerLoop : MonoBehaviour
     private void GameEvents_SandwichSubmitted(SandwichSubmitArgs args)
     {
         int tipsDelta = Customer.GetSandwichScore(args);
-        TipsAmount += tipsDelta;
+        if (tipsDelta < 0)
+        {
+            FailureAttempts--;
+
+            if(FailureAttempts < 0)
+            {
+                _isEnabled = false;
+                GameEvents.TriggerGameOver();
+                return;
+            }
+        }
+        else
+        {
+            TipsAmount += tipsDelta;
+        }
         NumberOfCustomersServed++;
         GameEvents.TriggerTipsUpdated( new CustomerServedArgs()
         {
@@ -162,11 +166,13 @@ public class CustomerLoop : MonoBehaviour
         // Go to tasting...
         _tempTimer = 0;
         CurrentPhase = Phase.Tasting;
+        CustomerAnimator.SetBool("IsBad", tipsDelta > 0);
+        CustomerAnimator.SetTrigger("Taste");
     }
 
     private void GameEvents_SandwichIngredientChanged(SandwichUpdateArgs args)
     {
-        int matchScore = Customer.GetMatchScore(args);
+        int matchScore = Customer.GetMatchScore(args.Ingredient.IngredientType);
 
         CustomerExpression expression = CustomerExpression.Neutral;
         if( matchScore > 0 )

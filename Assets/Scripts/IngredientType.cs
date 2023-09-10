@@ -10,4 +10,5 @@ public enum IngredientType
     Squirmy,
     Smooth,
     Spiny,
+    Bread,
 }

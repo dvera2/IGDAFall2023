@@ -29,7 +29,7 @@ public class UiGame : MonoBehaviour
     {
         if (TipsLabel != null)
         {
-            TipsLabel.text = $"Tips = ${tips.TipsTotal}";
+            TipsLabel.text = $"${tips.TipsTotal}!";
         }
 
         if( CustomersServedLabel != null)

@@ -656,6 +656,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3624213540427522274, guid: 96b898717f88fd74bb0ccfcf99362409, type: 3}
+      propertyPath: sandwichCreator
+      value: 
+      objectReference: {fileID: 1693706476}
     - target: {fileID: 3720769326016796093, guid: 96b898717f88fd74bb0ccfcf99362409, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -728,6 +732,14 @@ PrefabInstance:
       propertyPath: m_AdditionalShaderChannelsFlag
       value: 25
       objectReference: {fileID: 0}
+    - target: {fileID: 4454640851884450017, guid: 96b898717f88fd74bb0ccfcf99362409, type: 3}
+      propertyPath: m_Type
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4454640851884450017, guid: 96b898717f88fd74bb0ccfcf99362409, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: a0b56e64f3a2f454d8182d8c220054ac, type: 3}
     - target: {fileID: 4880638023657019028, guid: 96b898717f88fd74bb0ccfcf99362409, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0

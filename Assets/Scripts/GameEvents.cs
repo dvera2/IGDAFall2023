@@ -43,12 +43,14 @@ public class GameEvents : MonoBehaviour
     public static event System.Action<CustomerServedArgs> CustomersServed;
     public static void TriggerTipsUpdated(CustomerServedArgs args) => CustomersServed?.Invoke(args);
 
-
     public static event System.Action<TimeArgs> TimeUpdated;
     public static void TriggerTimeUpdated(TimeArgs args) => TimeUpdated?.Invoke(args);
 
     public static event System.Action<CustomerLoop> TimesUp;
-    internal static void TriggerTimeUp(CustomerLoop customerLoop) => TimesUp?.Invoke(customerLoop);
+    public static void TriggerTimeUp(CustomerLoop customerLoop) => TimesUp?.Invoke(customerLoop);
+
+    public static event System.Action GameOver;
+    public static void TriggerGameOver() => GameOver?.Invoke();
 
     private void OnDestroy()
     {
@@ -58,6 +60,7 @@ public class GameEvents : MonoBehaviour
         CustomersServed = null;
         TimeUpdated = null;
         TimesUp = null;
+        GameOver = null;
     }
 
 }
