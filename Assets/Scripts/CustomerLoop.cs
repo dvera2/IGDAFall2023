@@ -143,17 +143,59 @@ public class CustomerLoop : MonoBehaviour
     {
         int tipsDelta = Customer.GetSandwichScore(args);
         CustomerExpression expression = CustomerExpression.Neutral;
-        if (tipsDelta > 0)
+        if (tipsDelta > 1)
         {
             expression = CustomerExpression.Happy;
         }
-        else if (tipsDelta < 0)
+        else if(tipsDelta >= 0)
+        {
+            expression = CustomerExpression.Neutral;
+        }
+        else if (tipsDelta > -2)
         {
             expression = CustomerExpression.Mad;
         }
+        else
+        {
+            expression = CustomerExpression.Sick;
+        }
+
+        if(args.IsVerySpicy())
+        {
+            expression = CustomerExpression.OnFire;
+        }
+
 
         GameEvents.TriggerSatisfactionChanged(expression);
 
+        int state = 0;
+        switch (expression)
+        {
+            case CustomerExpression.Neutral:
+                state = 0; break;
+
+            case CustomerExpression.Mad:
+                state = 1; break;
+
+            case CustomerExpression.Sick:
+                state = 2; break;
+
+            case CustomerExpression.OnFire:
+                state = 3; break;
+
+            case CustomerExpression.Happy:
+                state = 4; break;
+
+            default:
+                break;
+        }
+
+
+        // Go to tasting...
+        _tempTimer = 0;
+        SetPhase(Phase.Tasting);
+        CustomerAnimator.SetInteger("TasteState", state);
+        CustomerAnimator.SetTrigger("Taste");
 
         if (tipsDelta < 0)
         {
@@ -170,19 +212,14 @@ public class CustomerLoop : MonoBehaviour
         {
             TipsAmount += tipsDelta;
         }
+
         NumberOfCustomersServed++;
         GameEvents.TriggerTipsUpdated( new CustomerServedArgs()
         {
             TipsDelta = tipsDelta,
             TipsTotal = TipsAmount,
+            CustomersServedSoFar = NumberOfCustomersServed,
         });
-
-
-        // Go to tasting...
-        _tempTimer = 0;
-        SetPhase(Phase.Tasting);
-        CustomerAnimator.SetBool("IsBad", tipsDelta > 0);
-        CustomerAnimator.SetTrigger("Taste");
     }
 
     private void GameEvents_SandwichIngredientChanged(SandwichUpdateArgs args)
