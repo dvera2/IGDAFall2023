@@ -43,6 +43,7 @@ public class UiWants : MonoBehaviour
         for(int i = 0; i < Mathf.Min(3, ingredients.Count); i++)
         {
             images[i].sprite = GetSprite(ingredients[i]);
+            images[i].rectTransform.Rotate(new Vector3(0, 0, Random.Range(-90, 90f)));
             images[i].enabled = true;
         }
     }

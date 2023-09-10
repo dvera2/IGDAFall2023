@@ -11,6 +11,15 @@ public class SandwichUpdateArgs
 public class SandwichSubmitArgs
 {
     public List<Ingredient> Sandwich;
+
+    public bool IsVerySpicy()
+    {
+        int spice = 0;
+        foreach(var i in Sandwich)
+            if(i.IngredientType == IngredientType.Spicy) spice++;
+
+        return spice > 2;
+    }
 }
 
 public struct TimeArgs

@@ -48,9 +48,9 @@ public class CustomerCharacter : MonoBehaviour
     private void SetFaceExpression(CustomerExpression expression)
     {
         Debug.Assert(Head, "Torso sprite is missing!");
+        _expression = expression;
         if (CurrentFace && Head)
         {
-            _expression = expression;
             Head.sprite = CurrentFace.GetFace(_expression);
         }
     }
@@ -118,7 +118,7 @@ public class CustomerCharacter : MonoBehaviour
 
         Debug.Log(builder.ToString());
 
-        var items = _customerIngredientRanking.OrderBy(x=>x.Value).Select(x=>x.Key).ToList();
+        var items = _customerIngredientRanking.OrderByDescending(x=>x.Value).Select(x=>x.Key).ToList();
         GameEvents.TriggerWantsDetermined(items);
     }
 
