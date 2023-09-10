@@ -173,13 +173,14 @@ public class CustomerLoop : MonoBehaviour
     private void GameEvents_SandwichIngredientChanged(SandwichUpdateArgs args)
     {
         int matchScore = Customer.GetMatchScore(args.Ingredient.IngredientType);
+        Debug.Log($"Ingredient evaluated: {args.Ingredient.IngredientType}, score= {matchScore}");
 
         CustomerExpression expression = CustomerExpression.Neutral;
         if( matchScore > 0 )
         {
             expression = CustomerExpression.Happy;
         }
-        else
+        else if( matchScore < 0 )
         {
             expression = CustomerExpression.Mad;
         }

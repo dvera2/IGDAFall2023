@@ -58,7 +58,7 @@ public class SandwichCreator: MonoBehaviour
             spawnedIngredient.GetComponent<SpriteRenderer>().sortingOrder = ingredientsStackIndex + 100;
             spawnedIngredient.transform.Rotate(new Vector3(0, 0, Random.Range(-45f, 45f)));
             currentSandwhich.Add(spawnedIngredient);
-            Debug.Log("the index is " + ingredientsStackIndex);
+            //Debug.Log("the index is " + ingredientsStackIndex);
 
             if(ingredientsStackIndex < 10)
             {

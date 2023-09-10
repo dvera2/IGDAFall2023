@@ -97,5 +97,8 @@ public class CustomerCharacter : MonoBehaviour
             _customerIngredientRanking.Add(list[idx], i - 3);
             list.RemoveAt(idx);
         }
+
+        foreach (var item in _customerIngredientRanking)
+            Debug.Log($"{item.Key} = {item.Value}");
     }
 }
