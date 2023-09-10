@@ -9,6 +9,11 @@ public class SandwichCreator: MonoBehaviour
     public int ingredientsStackIndex;
     public Transform[] spawnPoints;
     public List<Ingredient> currentSandwhich;
+
+    public AudioSource audioSource;
+
+    public AudioClip SandwhichFull;
+    public AudioClip ButtonClick;
    
 
     // Start is called before the first frame update
@@ -27,6 +32,7 @@ public class SandwichCreator: MonoBehaviour
             Debug.Log("Decremented Index should now be " + ingredientsStackIndex);
             Destroy(currentSandwhich[ingredientsStackIndex].gameObject);
             currentSandwhich.RemoveAt(ingredientsStackIndex);
+            audioSource.PlayOneShot(ButtonClick);
         }
     }
 
@@ -35,8 +41,8 @@ public class SandwichCreator: MonoBehaviour
         GameEvents.TriggerSandwichSubmitted(new SandwichSubmitArgs()
         {
             Sandwich = currentSandwhich
-        }); 
-
+        });
+        audioSource.PlayOneShot(ButtonClick);
         ClearSandwich();
     }
 
@@ -48,6 +54,8 @@ public class SandwichCreator: MonoBehaviour
         }
         currentSandwhich.Clear();
         ingredientsStackIndex = 0;
+        audioSource.PlayOneShot(ButtonClick);
+
     }
 
     public void SpawnIngredientAtIndex(Ingredient originalPrefab)
@@ -69,6 +77,10 @@ public class SandwichCreator: MonoBehaviour
             {
                 Ingredient = spawnedIngredient,
             });
+        }
+        else
+        {
+            audioSource.PlayOneShot(SandwhichFull);
         }
 
     }
