@@ -11,6 +11,9 @@ public class UiGameOver : MonoBehaviour
     public string TimesUpMsg = "Out of Time!";
     public AudioSource Audio;
     public TMP_Text Tips;
+    public Animator Animator;
+
+    int tipAmount = 0;
 
     private void Awake()
     {
@@ -22,16 +25,30 @@ public class UiGameOver : MonoBehaviour
 
     private void OnGameOver(GameOverReason obj)
     {
+        if(Animator)
+            Animator.enabled = true;
+
         if (Msg)
         {
             Msg.text = obj == GameOverReason.Time ? TimesUpMsg : LoseMsg;
+        }
+
+        if(Audio)
+            Audio.Play();
+
+
+        if (Tips)
+        {
+            if (tipAmount > 0)
+                Tips.text = $"Earned {tipAmount}!";
+            else
+                Tips.text = "You earned <i>NOTHING</i>.";
         }
     }
 
     private void OnCustomerServed(CustomerServedArgs obj)
     {
-        if (Tips)
-            Tips.text = $"Earned {obj.TipsTotal}!";
+        tipAmount = obj.TipsTotal;
     }
 
     public void RestartGame()
@@ -42,10 +59,5 @@ public class UiGameOver : MonoBehaviour
     public void GoToCredits()
     {
         SceneManager.LoadScene("Start");
-    }
-
-    public void OnEnable()
-    {
-        Audio.Play();    
     }
 }

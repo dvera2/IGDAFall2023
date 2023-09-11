@@ -1384,7 +1384,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7434433341991136732, guid: 3989773b27c26894eb3c14b44fe1d701, type: 3}
       propertyPath: StartingDuration
-      value: 20
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 7434433341991136732, guid: 3989773b27c26894eb3c14b44fe1d701, type: 3}
       propertyPath: DurationReduction
@@ -1459,6 +1459,34 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 510715581892346945, guid: 5e90c15f242ccac4bba42dcce1ec258b, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 981868342943702239, guid: 5e90c15f242ccac4bba42dcce1ec258b, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1170574312100637069, guid: 5e90c15f242ccac4bba42dcce1ec258b, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1401016766524696011, guid: 5e90c15f242ccac4bba42dcce1ec258b, type: 3}
+      propertyPath: Animator
+      value: 
+      objectReference: {fileID: 8419390163913307664}
+    - target: {fileID: 1689097785524650896, guid: 5e90c15f242ccac4bba42dcce1ec258b, type: 3}
+      propertyPath: m_PlayOnAwake
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2509817518681439897, guid: 5e90c15f242ccac4bba42dcce1ec258b, type: 3}
+      propertyPath: m_text
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 3573309006985402365, guid: 5e90c15f242ccac4bba42dcce1ec258b, type: 3}
+      propertyPath: m_text
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 4061935158163156404, guid: 5e90c15f242ccac4bba42dcce1ec258b, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -1557,17 +1585,26 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5347528470388577760, guid: 5e90c15f242ccac4bba42dcce1ec258b, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5849001520501525656, guid: 5e90c15f242ccac4bba42dcce1ec258b, type: 3}
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 519420031}
+    - target: {fileID: 9147375206986152719, guid: 5e90c15f242ccac4bba42dcce1ec258b, type: 3}
+      propertyPath: m_Color.a
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5e90c15f242ccac4bba42dcce1ec258b, type: 3}
+--- !u!95 &8419390163913307664 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 1170574312100637069, guid: 5e90c15f242ccac4bba42dcce1ec258b, type: 3}
+  m_PrefabInstance: {fileID: 8419390163913307663}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &8664017949478851976
 PrefabInstance:
   m_ObjectHideFlags: 0

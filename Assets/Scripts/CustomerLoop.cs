@@ -146,24 +146,23 @@ public class CustomerLoop : MonoBehaviour
     {
         int tipsDelta = Customer.GetSandwichScore(args);
         CustomerExpression expression = CustomerExpression.Neutral;
-        if (tipsDelta > 1)
+        if (tipsDelta >= 1)
         {
             expression = CustomerExpression.Happy;
         }
-        else if(tipsDelta >= 0)
+        else if(tipsDelta == 0)
         {
             expression = CustomerExpression.Neutral;
         }
-        else if (tipsDelta > -2)
+        else if (tipsDelta < 0)
         {
-            expression = CustomerExpression.Mad;
-        }
-        else
-        {
-            expression = CustomerExpression.Sick;
+            if (Random.Range(0, 1f) > 0.3)
+                expression = CustomerExpression.Sick;
+            else
+                expression = CustomerExpression.Mad;
         }
 
-        if(args.IsVerySpicy())
+        if(args.IsVerySpicy() || (tipsDelta < 0 && Random.Range(0, 1f) > 0.5f))
         {
             expression = CustomerExpression.OnFire;
         }

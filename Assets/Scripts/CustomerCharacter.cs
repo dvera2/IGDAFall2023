@@ -104,7 +104,7 @@ public class CustomerCharacter : MonoBehaviour
         for (int i = 0; i < _validIngredients.Count; i++)
         {
             int idx = Random.Range(0, list.Count);
-            _customerIngredientRanking.Add(list[idx], i - 2);
+            _customerIngredientRanking.Add(list[idx], i - 3);
             list.RemoveAt(idx);
         }
 
