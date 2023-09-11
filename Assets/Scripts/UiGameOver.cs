@@ -36,12 +36,12 @@ public class UiGameOver : MonoBehaviour
 
     public void RestartGame()
     {
-        SceneManager.LoadScene("Game");
+        SceneManager.LoadScene(1);
     }
 
     public void GoToCredits()
     {
-        SceneManager.LoadScene("Start");
+        SceneManager.LoadScene(2);
     }
 
     public void OnEnable()
