@@ -29,6 +29,9 @@ public class CustomerCharacter : MonoBehaviour
     public AudioBank OnFireSounds;
     public AudioBank GreetingSounds;
 
+    public ParticleSystem Puke;
+    public ParticleSystem Fire;
+
     public CharacterFaceData CurrentFace;
 
     private CustomerExpression _expression = CustomerExpression.Neutral;
@@ -127,6 +130,16 @@ public class CustomerCharacter : MonoBehaviour
     {
         if(GreetingSounds)
             GreetingSounds.Play(AudioSrc);
+    }
+
+    public void PlayPuke()
+    {
+        Puke.Play();
+    }
+
+    public void PlayFire()
+    {
+        Fire.Play();
     }
 
     public void PlayResultAudio()
