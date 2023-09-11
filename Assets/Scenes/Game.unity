@@ -1338,6 +1338,26 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 248136044650851710, guid: 3989773b27c26894eb3c14b44fe1d701, type: 3}
+      propertyPath: m_SortingLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 248136044650851710, guid: 3989773b27c26894eb3c14b44fe1d701, type: 3}
+      propertyPath: m_SortingLayerID
+      value: 591675981
+      objectReference: {fileID: 0}
+    - target: {fileID: 2127915188857107466, guid: 3989773b27c26894eb3c14b44fe1d701, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.59
+      objectReference: {fileID: 0}
+    - target: {fileID: 2127915188857107466, guid: 3989773b27c26894eb3c14b44fe1d701, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.27
+      objectReference: {fileID: 0}
+    - target: {fileID: 2127915188857107466, guid: 3989773b27c26894eb3c14b44fe1d701, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 3.83
+      objectReference: {fileID: 0}
     - target: {fileID: 4382289284185748793, guid: 3989773b27c26894eb3c14b44fe1d701, type: 3}
       propertyPath: m_PlayOnAwake
       value: 0
@@ -1346,9 +1366,17 @@ PrefabInstance:
       propertyPath: OutputAudioMixerGroup
       value: 
       objectReference: {fileID: 8726083613795190002, guid: 92324b1e397254145a46708df19714ec, type: 2}
+    - target: {fileID: 4930542280755618556, guid: 3989773b27c26894eb3c14b44fe1d701, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5006293660124356962, guid: 3989773b27c26894eb3c14b44fe1d701, type: 3}
       propertyPath: m_LocalPosition.y
       value: -1.99
+      objectReference: {fileID: 0}
+    - target: {fileID: 6445550662020532323, guid: 3989773b27c26894eb3c14b44fe1d701, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7434433341991136732, guid: 3989773b27c26894eb3c14b44fe1d701, type: 3}
       propertyPath: CurrentDuration
@@ -1361,6 +1389,14 @@ PrefabInstance:
     - target: {fileID: 7434433341991136732, guid: 3989773b27c26894eb3c14b44fe1d701, type: 3}
       propertyPath: DurationReduction
       value: 0.85
+      objectReference: {fileID: 0}
+    - target: {fileID: 7625897893845720756, guid: 3989773b27c26894eb3c14b44fe1d701, type: 3}
+      propertyPath: m_SortingLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7625897893845720756, guid: 3989773b27c26894eb3c14b44fe1d701, type: 3}
+      propertyPath: m_SortingLayerID
+      value: 591675981
       objectReference: {fileID: 0}
     - target: {fileID: 7652612408151220475, guid: 3989773b27c26894eb3c14b44fe1d701, type: 3}
       propertyPath: m_Name
