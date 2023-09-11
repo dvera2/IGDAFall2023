@@ -6,8 +6,9 @@ using UnityEngine.SceneManagement;
 
 public class UiGameOver : MonoBehaviour
 {
-    public GameObject TimesUp;
-    public GameObject LoseGame;
+    public TMP_Text Msg;
+    public string LoseMsg = "Customers Mad!";
+    public string TimesUpMsg = "Out of Time!";
     public AudioSource Audio;
     public TMP_Text Tips;
 
@@ -15,25 +16,15 @@ public class UiGameOver : MonoBehaviour
     {
         GameEvents.CustomersServed += OnCustomerServed;
         GameEvents.GameOver += OnGameOver;
+
+        gameObject.SetActive(false);
     }
 
     private void OnGameOver(GameOverReason obj)
     {
-        if(obj == GameOverReason.Lose)
+        if (Msg)
         {
-            if(TimesUp != null)
-                TimesUp.SetActive(false);
-            
-            if(LoseGame != null)
-                LoseGame.SetActive(true);
-        }
-        else
-        {
-            if (LoseGame != null)
-                LoseGame.SetActive(false);
-
-            if (TimesUp != null)
-                TimesUp.SetActive(true);
+            Msg.text = obj == GameOverReason.Time ? TimesUpMsg : LoseMsg;
         }
     }
 
