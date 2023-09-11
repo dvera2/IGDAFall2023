@@ -72,13 +72,6 @@ public class CustomerCharacter : MonoBehaviour
 
     public int GetSandwichScore(SandwichSubmitArgs args)
     {
-        if (args.Sandwich.Count < 2)
-            return -10;
-
-        int lastIdx = args.Sandwich.Count - 1;
-        if (args.Sandwich[0].IngredientType != IngredientType.Bread || args.Sandwich[lastIdx].IngredientType != IngredientType.Bread)
-            return -10;
-
         int score = 0;
         HashSet<IngredientType> Hash = new HashSet<IngredientType>();
         for(int i = 1; i < args.Sandwich.Count - 1; i++)
