@@ -43,6 +43,7 @@ public class CustomerLoop : MonoBehaviour
 
     void Start()
     {
+        CurrentDuration = StartingDuration;
         SetPhase(Phase.BetweenCustomers);
         StartNewCustomer();
     }

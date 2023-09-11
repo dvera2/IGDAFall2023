@@ -13,15 +13,36 @@ public class UiGame : MonoBehaviour
     public TMP_Text CustomersServedLabel;
     public GameObject WantsImage;
 
+    public GameObject GameOverObj;
+
     private void Start()
     {
         GameEvents.CustomersServed += OnCustomersServed;
         GameEvents.TimesUp += OnTimesUP;
         GameEvents.PhaseChanged += OnPhaseChanged;
-        
+        GameEvents.GameOver += OnGameOver;
+
+        if (GameOverObj)
+        {
+            GameOverObj.SetActive(false);
+        }
+
+        if (WantsImage)
+        {
+            WantsImage.SetActive(false);
+        }
+
         if (TipsDeltaLabel)
         {
             TipsDeltaLabel.gameObject.SetActive(false);
+        }
+    }
+
+    private void OnGameOver()
+    {
+        if (GameOverObj)
+        {
+            GameOverObj.SetActive(true);
         }
     }
 
