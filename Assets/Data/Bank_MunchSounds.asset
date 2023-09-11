@@ -13,4 +13,5 @@ MonoBehaviour:
   m_Name: Bank_MunchSounds
   m_EditorClassIdentifier: 
   AudioClips:
-  - {fileID: 8300000, guid: c411ac256f14edb448616014e4ba73e7, type: 3}
+  - {fileID: 8300000, guid: 8021e149a1aa91a4db8b7a02411219ec, type: 3}
+  - {fileID: 8300000, guid: 63f897656a327dd48ba79976c6c6eb70, type: 3}

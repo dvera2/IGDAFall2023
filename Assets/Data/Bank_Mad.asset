@@ -13,5 +13,4 @@ MonoBehaviour:
   m_Name: Bank_Mad
   m_EditorClassIdentifier: 
   AudioClips:
-  - {fileID: 8300000, guid: d2025aa4df700e34989e0749d66d488b, type: 3}
-  - {fileID: 8300000, guid: acb743658fe398e4e8a8f8a0ddf27da3, type: 3}
+  - {fileID: 8300000, guid: db74cccdf2eb2b144a187606f24e73d9, type: 3}

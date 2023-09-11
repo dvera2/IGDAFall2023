@@ -108,7 +108,9 @@ public class CustomerLoop : MonoBehaviour
 
                     if (CurrentTime >= CurrentDuration)
                     {
+                        _isEnabled = false;
                         GameEvents.TriggerTimeUp(this);
+                        GameEvents.TriggerGameOver(GameOverReason.Time);
                     }
                 }
                 break;
@@ -205,7 +207,7 @@ public class CustomerLoop : MonoBehaviour
             if(FailureAttempts < 0)
             {
                 _isEnabled = false;
-                GameEvents.TriggerGameOver();
+                GameEvents.TriggerGameOver(GameOverReason.Lose);
                 return;
             }
         }

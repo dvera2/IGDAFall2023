@@ -35,6 +35,11 @@ public struct CustomerServedArgs
     public int CustomersServedSoFar;
 }
 
+public enum GameOverReason
+{
+    Time,
+    Lose
+}
 
 public class GameEvents : MonoBehaviour
 {
@@ -58,8 +63,8 @@ public class GameEvents : MonoBehaviour
     public static event System.Action<CustomerLoop> TimesUp;
     public static void TriggerTimeUp(CustomerLoop customerLoop) => TimesUp?.Invoke(customerLoop);
 
-    public static event System.Action GameOver;
-    public static void TriggerGameOver() => GameOver?.Invoke();
+    public static event System.Action<GameOverReason> GameOver;
+    public static void TriggerGameOver(GameOverReason reason) => GameOver?.Invoke(reason);
 
     public static event System.Action<CustomerLoop.Phase> PhaseChanged;
     public static void TriggerPhaseChange(CustomerLoop.Phase phase) => PhaseChanged?.Invoke(phase);

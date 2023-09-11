@@ -38,7 +38,7 @@ public class UiGame : MonoBehaviour
         }
     }
 
-    private void OnGameOver()
+    private void OnGameOver(GameOverReason reason)
     {
         if (GameOverObj)
         {
